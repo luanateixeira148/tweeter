@@ -1,0 +1,28 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100vw;
+  height: 120px;
+  padding: 0 1.5em;
+
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+
+.nav-left {
+  font-family: 'Bungee', cursive;
+}
+
+.nav-right {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.fas {
+  color: #F13A1B;
+}
