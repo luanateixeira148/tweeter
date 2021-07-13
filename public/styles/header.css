@@ -1,0 +1,12 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("../images/inspiration-geometry.png");
+  background-color: #D99822;
+
+  height: 400px;
+  width: 100vw;
+}
