@@ -31,10 +31,7 @@ body {
  */
 
 main {
-  /* temporary height */
-  height: 200px;
   width: 90%;
-  /* temporary bg color - it needs to be the same color as the body bg color */
   background-color: #f4f1ec;
 }
 
