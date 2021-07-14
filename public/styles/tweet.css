@@ -1,6 +1,11 @@
 article.tweet {
   padding: 0 1.5em;
   border: #555148 3px solid;
+  margin-bottom: 50px;
+}
+
+article.tweet:hover {
+  box-shadow: 10px 10px 0 0 #C9CAE3;
 }
 
 article.tweet header {
@@ -53,5 +58,8 @@ article.tweet footer {
 
 span.icons .fas {
   padding: 0 0.3em;
+}
 
+span.icons .fas:hover {
+  color: #C7992F;
 }
