@@ -83,6 +83,8 @@ $(document).ready(function() {
 
     if ($tweetText.val().length > 140) {
       alert('tweet is too long');
+    } else if ($tweetText.val().length === 0) {
+      alert('nothing to tweet');
     } else {
       $.post('/tweets', urlEncodedData, () => {
         loadTweets();

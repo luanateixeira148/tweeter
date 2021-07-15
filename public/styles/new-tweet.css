@@ -49,3 +49,22 @@
   font-size: 20pt;
   color: #55514A;
 }
+
+
+/* Error Message */
+
+.errorMessage {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px red solid;
+  background-color: rgb(255, 205, 205);
+  margin: 5% 0;
+}
+
+.errorMessage > .fas {
+  color: red;
+  margin-right: 1em;
+}
