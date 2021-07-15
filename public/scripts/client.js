@@ -6,8 +6,9 @@
 
 $(document).ready(function() {
 
-  const loadTweets = function () {
+  $('.errorMessage').hide();
 
+  const loadTweets = function () {
     $.get( '/tweets', function(tweet) {
       const $tweets = renderTweets(tweet);
       $('.display-tweets').append($tweets);
@@ -82,10 +83,18 @@ $(document).ready(function() {
     event.preventDefault();
 
     if ($tweetText.val().length > 140) {
-      alert('tweet is too long');
+      $('.errorMessage').slideDown( "slow", ()=>{
+        $('.errorMessage').show();
+      });
     } else if ($tweetText.val().length === 0) {
-      alert('nothing to tweet');
+      $('.errorMessage').slideDown( "slow", ()=>{
+        $('.errorMessage').show();
+      });
     } else {
+      $('.errorMessage').slideUp( "slow", ()=> {
+        $('.errorMessage').hide();
+      });
+      
       $.post('/tweets', urlEncodedData, () => {
         loadTweets();
       });
