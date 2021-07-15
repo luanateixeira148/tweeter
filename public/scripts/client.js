@@ -28,6 +28,13 @@ $(document).ready(function() {
     }
   };
 
+  // "escapes" the potentially insecure text by re-encoding text.
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function(tweet) {
     const $tweet = `
     <article class="tweet">
@@ -42,7 +49,7 @@ $(document).ready(function() {
       </header>
       <div class="content">
         <p class="tweet">
-        ${tweet.content.text}
+        ${escape(tweet.content.text)}
         </p>
       </div>
       <footer>
