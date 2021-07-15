@@ -6,31 +6,6 @@
 
 $(document).ready(function() {
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
-
   const loadTweets = function () {
 
     $.get( '/tweets', function(tweet) {
@@ -42,6 +17,8 @@ $(document).ready(function() {
   loadTweets();
 
   const renderTweets = function(tweets) {
+    // empties the page before rendering all the tweets from the database (so we don't see any duplicate tweets)
+    $('#tweets-container').empty();
     // loops through tweets
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
@@ -85,8 +62,6 @@ $(document).ready(function() {
     
   };
 
-  renderTweets(data);
-
 
   // deals with new tweet form submission
   const $form = $('.tweet-form');
@@ -97,8 +72,8 @@ $(document).ready(function() {
     // stops HTML from submitting form
     event.preventDefault();
 
-    $.post('/tweets', urlEncodedData, (response) => {
-      console.log(urlEncodedData);
+    $.post('/tweets', urlEncodedData, () => {
+      loadTweets();
     });
 
   });
