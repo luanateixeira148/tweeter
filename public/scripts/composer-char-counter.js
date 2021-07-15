@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log('The DOM is ready.');
+  // console.log('The DOM is ready.');
 
   // Tweet count-down
   $( "#tweet-text" ).on("input", function() {
