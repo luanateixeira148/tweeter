@@ -31,6 +31,16 @@ $(document).ready(function() {
     }
   ];
 
+  const loadTweets = function () {
+
+    $.get( '/tweets', function(tweet) {
+      const $tweets = renderTweets(tweet);
+      $('.display-tweets').append($tweets);
+    });
+  };
+
+  loadTweets();
+
   const renderTweets = function(tweets) {
     // loops through tweets
     for (const tweet of tweets) {
