@@ -77,4 +77,12 @@ $(document).ready(function() {
 
   renderTweets(data);
 
+
+
+  $( '.tweet-form' ).submit(function( event ) {
+    event.preventDefault();
+  }); 
+
+  
+
 });
