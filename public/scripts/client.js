@@ -66,15 +66,21 @@ $(document).ready(function() {
   // deals with new tweet form submission
   const $form = $('.tweet-form');
   $form.on('submit', function( event ) {
+    const $tweetText = $('#tweet-text');
+    // console.log($tweetText.val().length)
 
     // serializes the form data as a query string.
     const urlEncodedData = $(this).serialize();
     // stops HTML from submitting form
     event.preventDefault();
 
-    $.post('/tweets', urlEncodedData, () => {
-      loadTweets();
-    });
+    if ($tweetText.val().length > 140) {
+      alert('tweet is too long');
+    } else {
+      $.post('/tweets', urlEncodedData, () => {
+        loadTweets();
+      });
+    }
 
   });
 
