@@ -78,11 +78,19 @@ $(document).ready(function() {
   renderTweets(data);
 
 
+  // deals with new tweet form submission
+  const $form = $('.tweet-form');
+  $form.on('submit', function( event ) {
 
-  $( '.tweet-form' ).submit(function( event ) {
+    // serializes the form data as a query string.
+    const urlEncodedData = $(this).serialize();
+    // stops HTML from submitting form
     event.preventDefault();
-  }); 
 
-  
+    $.post('/tweets', urlEncodedData, (response) => {
+      console.log(urlEncodedData);
+    });
+
+  });
 
 });
