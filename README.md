@@ -10,6 +10,10 @@ Tweeter was built to practice front-end skills such as HTML, CSS, JS, jQuery and
 
 ## Final Product
 
+![Screenshot of Desktop View](https://github.com/luanateixeira148/tweeter/blob/master/docs/home-page.png?raw=true)
+![Screenshot of Error Message](https://github.com/luanateixeira148/tweeter/blob/master/docs/error-message.png?raw=true)
+!![Screenshot of Mobile View](https://github.com/luanateixeira148/tweeter/blob/master/docs/mobile-version.png?raw=true)
+
 ## Usage
 
 #### Install dependencies:
