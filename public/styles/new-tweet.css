@@ -35,13 +35,17 @@
 
 .tweet-button {
   font-family: 'Bungee', cursive;
-  /* font-size: 20pt; */
   color: #FFFFFF;
 
   padding: 0.5em;
-
   border: none;
   background-color: #4153A2;
+
+  cursor: pointer;
+}
+
+.tweet-button:hover {
+  background-color: #071452;
 }
 
 .counter {
