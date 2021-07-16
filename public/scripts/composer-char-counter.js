@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   /* Count characters for new tweets */
-  $( "#tweet-text" ).on("input", function() {
+  $("#tweet-text").on("input", function(){
     const $length = $(this).val().length;
     const maxLength = 140;
     let remaining = maxLength - $length;

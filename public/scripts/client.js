@@ -1,17 +1,12 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 
-$(document).ready(function () {
+$(document).ready(function() {
 
   /* Hides error message by default */
   $('.error-message').hide();
 
   /* Makes get request to load old tweets */
-  const loadTweets = function () {
-    $.get('/tweets', function (tweet) {
+  const loadTweets = function() {
+    $.get('/tweets', function(tweet) {
       const $tweets = renderTweets(tweet);
       $('.display-tweets').append($tweets);
     });
@@ -19,7 +14,7 @@ $(document).ready(function () {
   loadTweets();
 
   /* Tweet Template */
-  const createTweetElement = function (data) {
+  const createTweetElement = function(data) {
 
     const $tweetTemplate = `
     <article class="tweet">
@@ -55,7 +50,7 @@ $(document).ready(function () {
   };
 
   /* Renders a new Tweet Element on the Page */
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
 
     $('#tweets-container').empty();
     for (const tweet of tweets) {
@@ -67,7 +62,7 @@ $(document).ready(function () {
 
   /* Deals with new tweet form submission */
   const $form = $('.tweet-form');
-  $form.on('submit', function (event) {
+  $form.on('submit', function(event) {
 
     const $tweetText = $('#tweet-text');
   
@@ -76,15 +71,15 @@ $(document).ready(function () {
     // stops HTML from submitting form
     event.preventDefault();
   
-    // ensure user is within character limits 
+    // ensure user is within character limits
     if ($tweetText.val().length > 140) {
   
-      showError('Your tweet is too long.')
+      showError('Your tweet is too long.');
       return;
   
     } else if ($tweetText.val().length === 0) {
   
-      showError('Your tweet is empty.')
+      showError('Your tweet is empty.');
       return;
   
     } else {
@@ -108,12 +103,12 @@ $(document).ready(function () {
 
 
 
-/* 
- * Helper Functions 
+/*
+ * Helper Functions
  */
 
 /* Show error message */
-const showError = function (text) {
+const showError = function(text) {
 
   $('.error-message').empty().append(`
       <i class="fas fa-exclamation-circle"></i>
@@ -124,10 +119,10 @@ const showError = function (text) {
     $('.error-message').empty().slideUp();
   }, 3000);
 
-}
+};
 
 /* "Escapes" the potentially insecure text by re-encoding input text */
-const escape = function (str) {
+const escape = function(str) {
 
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));

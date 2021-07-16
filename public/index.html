@@ -24,13 +24,13 @@
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
     <nav>
       <span class="nav-left">tweeter</span>
       <span class="nav-right">
@@ -48,14 +48,11 @@
             <h2>Luana Teixeira</h2>
         </div>
       </header>
-      <!-- Page-specific (main) content here -->
       <main class="container">
         <section class="new-tweet">
-          <!-- Validation Error Message -->
           <div class="error-message">
             <!-- Being render dynamically from client.js -->
           </div>
-          <!-- New tweet form -->
           <h2>Compose Tweet</h2>
           <form class="tweet-form">
             <label for="tweet-text" id="tweet-text-label">What are you humming about?</label>
@@ -66,14 +63,10 @@
             </div>
           </form>
         </section>
-        <!-- Tweets -->
         <section class="tweets" id="tweets-container">
-                <!-- Being render dynamically from client.js -->
+          <!-- Being render dynamically from client.js -->
         </section>
       </main>
     </div>
-    <!-- Scripts -->
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-
   </body>
 </html>
