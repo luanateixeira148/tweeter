@@ -68,6 +68,7 @@ $(document).ready(function () {
   /* Deals with new tweet form submission */
   const $form = $('.tweet-form');
   $form.on('submit', function (event) {
+
     const $tweetText = $('#tweet-text');
   
     // serializes the form data as a query string.
@@ -88,13 +89,17 @@ $(document).ready(function () {
   
     } else {
   
-      // $('.error-message').slideUp( "slow", ()=> {
+      
       $('.error-message').hide();
-      // });
   
       $.post('/tweets', urlEncodedData, () => {
         loadTweets();
+
+        /* resets form and counter */
+        $('#tweet-text').val('');
+        $('.counter').text('140');
       });
+
     }
   
   });
