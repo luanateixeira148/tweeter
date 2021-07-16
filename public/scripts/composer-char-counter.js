@@ -1,21 +1,20 @@
 $(document).ready(function() {
-  // console.log('The DOM is ready.');
 
-  // Tweet count-down
+  /* Count characters for new tweets */
   $( "#tweet-text" ).on("input", function() {
     const $length = $(this).val().length;
     const maxLength = 140;
-    let charactersLeft = maxLength - $length;
-    const $output = $('.counter')
+    let remaining = maxLength - $length;
   
-    $output.text(charactersLeft);
+    $('.counter').text(remaining);
 
-    //sets color to red if count is negative
-    if (charactersLeft < 0) {
-      $output.css("color", "#FB1401");
-    } else if (charactersLeft >= 0) {
-      $output.css("color", "#55514A");
+    /* Warn user is the character count is over the limit */
+    if (remaining < 0) {
+      $('.counter').css("color", "#FB1401");
+    } else if (remaining >= 0) {
+      $('.counter').css("color", "#55514A");
     }
+
   });
 });
 
