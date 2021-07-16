@@ -18,7 +18,7 @@
 }
 
 #tweet-text-label {
-  font-size: 20pt;
+  font-size: 16pt;
   font-weight: 600;
   color: #55514A;
 }
@@ -53,7 +53,7 @@
 
 /* Error Message */
 
-.errorMessage {
+.error-message {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -64,7 +64,7 @@
   margin: 5% 0;
 }
 
-.errorMessage > .fas {
+.error-message > .fas {
   color: red;
   margin-right: 1em;
 }
